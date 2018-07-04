@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Victography</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login/signup -->
+    <string name="login">Login</string>string>
+    <string name="signup">Sign Up</string>
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+    <string name="Repassword">Confirm password</string>
 </resources>
