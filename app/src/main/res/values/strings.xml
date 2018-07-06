@@ -8,4 +8,5 @@
     <string name="Username">Username</string>
     <string name="Password">Password</string>
     <string name="Repassword">Confirm password</string>
+    <string name="AllowedCharUsername">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.-</string>
 </resources>

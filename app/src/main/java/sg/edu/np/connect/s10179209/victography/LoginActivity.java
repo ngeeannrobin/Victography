@@ -22,22 +22,32 @@ public class LoginActivity extends AppCompatActivity {
         linkTVtoET(tvUsername,etUsername, getString(R.string.Username));
         linkTVtoET(tvPassword,etPassword, getString(R.string.Password));
     }
-
-    protected void linkTVtoET(final android.widget.TextView tv, final EditText et, final String hint){
+    //Method for linking TextView to EditText.
+    //When EditText is selected, TextView will be visible.
+    //When EditText is deselected, TextView will be invisible.
+    //This method serves no functional purpose, purely aesthetics.
+    protected void linkTVtoET(final TextView tv, final EditText et, final String hint){
         et.setOnFocusChangeListener(
-            new OnFocusChangeListener() {
-                @Override
-                public void onFocusChange(View v, boolean hasFocus) {
-                    if (hasFocus){
-                        tv.setVisibility(View.VISIBLE);
-                        et.setHint("");
-                    }
-                    else{
-                        tv.setVisibility(View.INVISIBLE);
-                        et.setHint(hint);
+                new OnFocusChangeListener() {
+                    @Override
+                    public void onFocusChange(View v, boolean hasFocus) {
+                        if (hasFocus){
+                            tv.setVisibility(View.VISIBLE);
+                            et.setHint("");
+                            tv.setTextColor(getResources().getColor(R.color.colorAccent));
+                        }
+                        else{
+                            et.setHint(hint);
+                            if (et.getText().toString().trim().length() == 0){
+                                tv.setVisibility(View.INVISIBLE);
+                            }
+                            else{
+                                tv.setVisibility(View.VISIBLE);
+                                tv.setTextColor(getResources().getColor(R.color.txt));
+                            }
+                        }
                     }
                 }
-            }
         );
     }
 }
