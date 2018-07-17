@@ -5,12 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.support.v7.app.AlertDialog;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.common.hash.Hashing;
 
 import java.nio.charset.Charset;
@@ -18,7 +20,6 @@ import java.util.Random;
 
 
 public class SignUpActivity extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class SignUpActivity extends AppCompatActivity {
         EditText etUsername = findViewById(R.id.etUsername);
         EditText etPassword = findViewById(R.id.etPassword);
         EditText etRepassword = findViewById(R.id.etRepassword);
+        String username = etUsername.getText().toString();
         //Check if username is taken
         if (false){
             new AlertDialog.Builder(SignUpActivity.this)
@@ -74,9 +76,10 @@ public class SignUpActivity extends AppCompatActivity {
             EditText et2 = findViewById(R.id.editText2);
 
             //Create string with password and random string
+            String randStr = GenerateRandString();
             String pwrand
                     = etPassword.getText().toString()
-                    + GenerateRandString();
+                    + randStr;
 
             //Hash the password + random string (salting)
             String hash = Hashing
@@ -96,6 +99,9 @@ public class SignUpActivity extends AppCompatActivity {
                     .toUpperCase();
             et.setText(pwrand);
             et2.setText(hash);
+
+            //Add account to database
+            (new UserAccount(username,hash,randStr)).AddAccount();
         }
     }
 
