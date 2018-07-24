@@ -24,5 +24,11 @@ public class MainActivity extends AppCompatActivity {
         Intent in = new Intent(this,SignUpActivity.class);
         startActivity(in);
     }
+    public void onClickTest(View v){
+        //UserAccount ua = new UserAccount("username","hash","rand");
+        //ua.AddAccount();
+        TextView tvTest = findViewById(R.id.tvTest);
+
+    }
 }
 

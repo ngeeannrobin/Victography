@@ -9,4 +9,5 @@
     <string name="Password">Password</string>
     <string name="Repassword">Confirm password</string>
     <string name="AllowedCharUsername">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.-</string>
+    <string name="FirebaseURL">https://victography-428e1.firebaseio.com</string>
 </resources>

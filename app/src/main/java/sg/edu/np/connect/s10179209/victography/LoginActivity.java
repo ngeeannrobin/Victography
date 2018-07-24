@@ -50,4 +50,14 @@ public class LoginActivity extends AppCompatActivity {
                 }
         );
     }
+
+    public void onClickLogin(View v){
+        EditText etUsername = findViewById(R.id.etUsername);
+        EditText etPassword = findViewById(R.id.etPassword);
+
+        String username = etUsername.getText().toString();
+        String password = etPassword.getText().toString();
+
+        (new UserAccount(username,password,LoginActivity.this)).Login();
+    }
 }
