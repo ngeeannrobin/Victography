@@ -145,6 +145,7 @@ public class UserAccount {
                     //Login or smth
                     if (DoubleHash(password,users).equals(userh)){ //Login success
                         SignUpActivity.ShowError("Login success",context);
+
                     }
                     else{
                         SignUpActivity.ShowError("Invalid login credentials! (password)",context);
