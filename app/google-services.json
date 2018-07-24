@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "257214923518-a775l9l6gc8ojah9cojnmcr4jfp87j4l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sg.edu.np.connect.s10179209.victography",
+            "certificate_hash": "087c000e16842495e5ae6e7368692d3a73dd55e8"
+          }
+        },
+        {
           "client_id": "257214923518-lk6k5o9lhttk3ut0fqgomba3pkgesi00.apps.googleusercontent.com",
           "client_type": 3
         }
