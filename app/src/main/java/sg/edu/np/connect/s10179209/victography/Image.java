@@ -49,5 +49,7 @@ public class Image {
         likes=lik;
         datePosted=dt;
     }
+    void nothin()
+    {}
 }
 
