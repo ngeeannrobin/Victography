@@ -17,6 +17,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+
+        //check if login record exists
+        LoginDBHelper dbHandler = new LoginDBHelper(this, null, null, 1);
+        Login login = dbHandler.getRecord();
+        if (login!=null){
+            //send to login page
+            Intent in = new Intent(this, LoginActivity.class);
+            startActivity(in);
+        }
     }
 
     @Override
