@@ -145,7 +145,17 @@ public class UserAccount {
                     //Login or smth
                     if (DoubleHash(password,users).equals(userh)){ //Login success
                         SignUpActivity.ShowError("Login success",context);
-
+                        //check if login record exists
+                        LoginDBHelper dbHandler = new LoginDBHelper(context, null, null, 1);
+                        Login login = dbHandler.getRecord();
+                        if (login!=null){
+                            //login
+                            //REDIRECT CODE GOES HERE
+                        }
+                        else{
+                            Login nlogin = new Login(username,password);
+                            dbHandler.Record(nlogin);
+                        }
                     }
                     else{
                         SignUpActivity.ShowError("Invalid login credentials! (password)",context);

@@ -21,6 +21,14 @@ public class LoginActivity extends AppCompatActivity {
 
         linkTVtoET(tvUsername,etUsername, getString(R.string.Username));
         linkTVtoET(tvPassword,etPassword, getString(R.string.Password));
+
+        //check if login record exists
+        LoginDBHelper dbHandler = new LoginDBHelper(this, null, null, 1);
+        Login login = dbHandler.getRecord();
+        if (login!=null){
+            //login
+            (new UserAccount(login.getUsername(),login.getPassword(),LoginActivity.this)).Login();
+        }
     }
     //Method for linking TextView to EditText.
     //When EditText is selected, TextView will be visible.
