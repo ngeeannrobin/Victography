@@ -9,12 +9,7 @@ public class Image {
     protected byte[] image;
     protected String description;
     protected int likes;
-    protected Date datePosted;
     //Get methods
-    public Date getDates()
-    {
-        return datePosted;
-    }
     public int getImageID()
     {
         return imageID;
@@ -40,14 +35,13 @@ public class Image {
     {
 
     }
-    public Image(int iid, String mn, byte[] img, String des, int lik, Date dt)
+    public Image(int iid, String mn, byte[] img, String des, int lik)
     {
         imageID=iid;
         memberName=mn;
         image=img;
         description=des;
         likes=lik;
-        datePosted=dt;
     }
 
 }
