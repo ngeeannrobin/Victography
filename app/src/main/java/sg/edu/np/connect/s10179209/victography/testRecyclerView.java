@@ -22,6 +22,6 @@ public class testRecyclerView extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(new MyAdapter(this, testimagecollection.getImage()));
 
-
+        //forpush
     }
 }
