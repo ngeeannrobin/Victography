@@ -15,8 +15,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
 
         //check if login record exists
         LoginDBHelper dbHandler = new LoginDBHelper(this, null, null, 1);
@@ -26,13 +24,6 @@ public class MainActivity extends AppCompatActivity {
             Intent in = new Intent(this, LoginActivity.class);
             startActivity(in);
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        //inflate the menu; this adds items to the action bar if it is present
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
     }
 
     public void onClickLogin(View v){

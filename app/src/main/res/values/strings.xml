@@ -14,4 +14,7 @@
     <!-- Strings related to menu bar -->
     <string name="login_string">Log In</string>
     <string name="sign_out">Sign Out</string>
+
+    <!-- bloody wesly's strings -->
+    <string name="like_btn">Like</string>
 </resources>

@@ -1,6 +1,7 @@
 package sg.edu.np.connect.s10179209.victography;
 
-public class Login {
+
+public class Login{
     private String username;
     private String password;
 

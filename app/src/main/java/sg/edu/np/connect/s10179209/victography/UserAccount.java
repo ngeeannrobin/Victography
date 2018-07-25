@@ -3,6 +3,7 @@ package sg.edu.np.connect.s10179209.victography;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 
@@ -18,7 +19,7 @@ import java.util.Random;
 
 import static android.content.ContentValues.TAG;
 
-public class UserAccount {
+public class UserAccount{
 
     //Properties
     private String username;
@@ -144,18 +145,20 @@ public class UserAccount {
                 if (userh!=null && users!=null) { //Exists
                     //Login or smth
                     if (DoubleHash(password,users).equals(userh)){ //Login success
-                        SignUpActivity.ShowError("Login success",context);
+
                         //check if login record exists
                         LoginDBHelper dbHandler = new LoginDBHelper(context, null, null, 1);
                         Login login = dbHandler.getRecord();
-                        if (login!=null){
-                            //login
-                            //REDIRECT CODE GOES HERE
-                        }
-                        else{
+
+                        if (login==null){
+                            //add record to sqlite
                             Login nlogin = new Login(username,password);
                             dbHandler.Record(nlogin);
                         }
+
+                        SignUpActivity.ShowError("Login success",context);
+                        Intent redirect = new Intent(context, ViewActivity.class);
+                        context.startActivity(redirect);
                     }
                     else{
                         SignUpActivity.ShowError("Invalid login credentials! (password)",context);
@@ -172,5 +175,8 @@ public class UserAccount {
                 Log.w(TAG, "Failed to read value. ", databaseError.toException());
             }
         });
+
+
+        //public static void startAc
     }
 }

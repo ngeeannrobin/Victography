@@ -18,12 +18,9 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".DisplayPagePlaceholder"><intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
+        <activity android:name=".ViewActivity" />
+        <activity android:name=".testRecyclerView" />
+        <activity android:name=".testAdapter"></activity>
     </application>
 
 </manifest>
