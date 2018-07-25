@@ -157,7 +157,7 @@ public class UserAccount{
                         }
 
                         SignUpActivity.ShowError("Login success",context);
-                        Intent redirect = new Intent(context, ViewActivity.class);
+                        Intent redirect = new Intent(context, testRecyclerView.class);
                         context.startActivity(redirect);
                     }
                     else{

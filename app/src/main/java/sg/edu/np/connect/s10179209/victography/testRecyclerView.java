@@ -17,20 +17,11 @@ public class testRecyclerView extends AppCompatActivity {
         setContentView(R.layout.activity_test_recycler_view);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
-        //use this setting to improve performance if you know that changes
-        //in content do not change the layout size of the RecyclerView
-        mRecyclerView.setHasFixedSize(true);
-
-        //use a linear layout manager
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        RecyclerView rv= (RecyclerView) findViewById(R.id.rv);
+        rv.setLayoutManager(new LinearLayoutManager(this));
+        rv.setAdapter(new MyAdapter(this, testimagecollection.getImage()));
 
 
-        String[] myDataset = {"a", "b", "c"};
-        //specify an adapter (see also next example)
-        mAdapter = new MyAdapter(myDataset);
-        mRecyclerView.setAdapter(mAdapter);
     }
 }
