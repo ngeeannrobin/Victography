@@ -5,7 +5,7 @@ import java.util.Date;
 public class Image {
     //Attributes
     protected int imageID;
-    protected int memberID;
+    protected String memberName;
     protected byte[] image;
     protected String description;
     protected int likes;
@@ -19,9 +19,9 @@ public class Image {
     {
         return imageID;
     }
-    public int getMemberID()
+    public String getMemberID()
     {
-        return memberID;
+        return memberName;
     }
     public byte[] getImage()
     {
@@ -40,10 +40,10 @@ public class Image {
     {
 
     }
-    public Image(int iid, int mid, byte[] img, String des, int lik, Date dt)
+    public Image(int iid, String mn, byte[] img, String des, int lik, Date dt)
     {
         imageID=iid;
-        memberID=mid;
+        memberName=mn;
         image=img;
         description=des;
         likes=lik;

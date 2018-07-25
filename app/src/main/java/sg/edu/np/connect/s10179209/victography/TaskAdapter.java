@@ -13,6 +13,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskViewHolder> {
     PictureDBAdapter dbAdapter;
     private List<Image> items;
     private int itemLayout;
+    private String name;
     public TaskAdapter(List<Image> items, int itemLayout)
     {
         this.items=items;
@@ -31,6 +32,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskViewHolder> {
     }
     @Override
     public void onBindViewHolder(TaskViewHolder viewHolder, int position) {
+        name="Zach";
         final Image item=items.get(position);
         viewHolder.description.setText(item.getDescription());
         Bitmap bmp= BitmapFactory.decodeByteArray(item.getImage(), 0 , item.getImage().length);
@@ -54,7 +56,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskViewHolder> {
             viewHolder.like.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    dbAdapter.addLike(Integer.toString(item.getImageID()));
+                    dbAdapter.addLike(Integer.toString(item.getImageID()), name);
                 }
             });
         }

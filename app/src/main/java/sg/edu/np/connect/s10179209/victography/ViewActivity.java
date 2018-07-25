@@ -15,6 +15,9 @@ public class ViewActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        dbadapter.addMemberData();
+        dbadapter.addImageData();
+        dbadapter.addLikeData();
         setContentView(R.layout.activity_view);
         ImageView picture=findViewById(R.id.imgPhoto);
 
